@@ -1,0 +1,58 @@
+{
+  "name": "bit2",
+  "version": "1.0.0",
+  "description": "比特图库",
+  "main": "/server/app.js",
+  "scripts": {
+    "serve-web": "vue-cli-service serve",
+    "serve-node": "cross-env NODE_ENV=development nodemon server/app.js --watch server",
+    "build": "vue-cli-service build && npm run doc",
+    "lint": "vue-cli-service lint",
+    "start": "NODE_ENV=production node server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "apidoc -i server/ -o dist/apidoc/"
+  },
+  "keywords": [
+    "nodejs",
+    "koa",
+    "二次开发",
+    "apidoc",
+    "前后端分离",
+    "log4"
+  ],
+  "author": "qiaojianfeng",
+  "license": "MIT",
+  "dependencies": {
+    "consola": "^2.15.0",
+    "core-js": "^3.6.5",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-jwt": "^4.0.0",
+    "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
+    "koa2-history-api-fallback": "^0.1.0",
+    "log4js": "^6.3.0",
+    "mime-types": "^2.1.27",
+    "mongoose": "^5.11.7",
+    "path": "^0.12.7",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "apidoc": "^0.25.0",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.6",
+    "sass-loader": "^10.1.0"
+  }
+}

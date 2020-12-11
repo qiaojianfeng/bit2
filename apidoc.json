@@ -1,0 +1,14 @@
+{
+  "name": "Bit2.Cool-Api",
+  "version": "1.0.0",
+  "description": "Bit图库Api",
+  "title": "FAST-SERVER-API",
+  "url": "http://127.0.0.1/api",
+  "header": {},
+  "footer": {},
+  "order": ["GetUser", "PostUser"],
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}
