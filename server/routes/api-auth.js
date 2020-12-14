@@ -2,11 +2,11 @@
  * @Author: qiaojianfeng
  * @Date: 2020-12-04 15:05:44
  * @Last Modified by: qiaojianfeng
- * @Last Modified time: 2020-12-11 19:21:50
+ * @Last Modified time: 2020-12-14 14:21:59
  */
 const router = require('koa-router')()
 const getUid = require('../middleware/getUid')
-const { login, getUser } = require('../controller/auth')
+const { login, getUser, register } = require('../controller/auth')
 
 /**
  * @api {post} /auth/login 用户登陆

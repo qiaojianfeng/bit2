@@ -24,7 +24,7 @@ const requestTransform = function(data) {
 
 const getMethodGet = function(inst) {
   return async function(url, data, config) {
-    data = { params: { ...data, t: +new Date() } }
+    // data = { params: { ...data, t: +new Date() } }
     try {
       const res = await inst.get(url, data, config)
       return res.data
@@ -70,7 +70,7 @@ const getMethodDelete = function(inst) {
 const getInstance = function(urlbase) {
   const instance = axios.create({
     baseURL: urlbase,
-    withCredentials: true,
+    // withCredentials: true,
     headers: HEADERS()
   })
   instance.interceptors.request.use(requestInterceptor, requestInterceptorError)

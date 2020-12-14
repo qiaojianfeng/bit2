@@ -1,5 +1,10 @@
 <template>
   <div class="home">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <upload />
   </div>
 </template>

@@ -6,10 +6,24 @@
                    to="/">首页</router-link>
       <router-link class="nav"
                    active-class="active"
-                   to="/login">登陆</router-link>
+                   to="/login"
+                   v-if="!user">登陆</router-link>
+      <router-link class="nav"
+                   active-class="active"
+                   to="/login"
+                   v-else>{{user.username}}</router-link>
     </nav>
   </header>
 </template>
+<script>
+import { inject } from 'vue'
+export default {
+  setup() {
+    const user = inject('user')
+    return { user }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .header {

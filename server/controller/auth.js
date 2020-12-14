@@ -19,7 +19,7 @@ module.exports = {
   },
   getUser: async ctx => {
     try {
-      const result = await authDB.Dao.getUser(ctx.request.body)
+      const result = await authDB.Dao.getUser(ctx.query.uid)
       ctx.body = result
     } catch (err) {
       throw err
