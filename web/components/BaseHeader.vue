@@ -10,7 +10,7 @@
                    v-if="!user">登陆</router-link>
       <router-link class="nav"
                    active-class="active"
-                   to="/login"
+                   to="/my"
                    v-else>{{user.username}}</router-link>
     </nav>
   </header>

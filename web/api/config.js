@@ -3,10 +3,12 @@ import { getCookie } from '@/utils/cookie'
 // eslint-disable-next-line
 const APIS = {
   development: {
-    authBase: '//127.0.0.1:3000/api'
+    authBase: '//127.0.0.1:3000/api/auth',
+    photoBase: '//127.0.0.1:3000/api/photo'
   },
   production: {
-    authBase: '//bit2.cool/api'
+    authBase: '//bit2.cool/api/auth',
+    photoBase: '//127.0.0.1:3000/api/photo'
   }
 }
 

@@ -2,7 +2,7 @@ import { getServer } from './base'
 import { BASE_URL } from './config'
 
 // 生成不同的业务接口服务实例
-const authServer = getServer(BASE_URL.authBase + '/auth')
+const authServer = getServer(BASE_URL.authBase)
 /**
  * 登录
  */

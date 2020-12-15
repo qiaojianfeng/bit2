@@ -1,10 +1,28 @@
 <template>
   <div class="upload-block">
-    <input type="file">
+    <input type="file"
+           @change="onChange">
   </div>
 </template>
 <script>
-export default {}
+import { uploadApi } from '@/api/photo.js'
+export default {
+  setup() {
+    function onChange(event) {
+      const { target } = event
+      upload(target.files)
+    }
+    async function upload(files) {
+      try {
+        const res = await uploadApi(files)
+        console.log(res)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    return { onChange }
+  }
+}
 </script>
 <style lang="scss" scoped>
 .upload-block {

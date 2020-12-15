@@ -1,0 +1,63 @@
+[2020-12-15T17:51:52.417] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/photo/
+request client ip:  127.0.0.1
+request body: 
+{"uid":"5fca1c6ecfd28d2687a19b1b"}
+response time: 12
+err name: AssertionError
+err message: status code must be a number
+err stack: AssertionError [ERR_ASSERTION]: status code must be a number
+    at Object.set status [as status] (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa/lib/response.js:86:5)
+    at Object.status (/Users/qiaojianfeng/qjf/more/bit2/node_modules/delegates/index.js:92:31)
+    at /Users/qiaojianfeng/qjf/more/bit2/server/middleware/catch.js:20:18
+    at async appCatch (/Users/qiaojianfeng/qjf/more/bit2/server/middleware/catch.js:19:5)
+*************** error log end ***************
+
+[2020-12-15T18:36:49.720] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/photo/
+request client ip:  127.0.0.1
+request body: 
+{}
+response time: 16
+err name: AssertionError
+err message: status code must be a number
+err stack: AssertionError [ERR_ASSERTION]: status code must be a number
+    at Object.set status [as status] (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa/lib/response.js:86:5)
+    at Object.status (/Users/qiaojianfeng/qjf/more/bit2/node_modules/delegates/index.js:92:31)
+    at /Users/qiaojianfeng/qjf/more/bit2/server/middleware/catch.js:20:18
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async appCatch (/Users/qiaojianfeng/qjf/more/bit2/server/middleware/catch.js:19:5)
+*************** error log end ***************
+
+[2020-12-15T18:48:01.261] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /%3C%=%20BASE_URL%20%%3Efavicon.ico
+request client ip:  127.0.0.1
+request query:  {}
+response time: 1
+err name: BadRequestError
+err message: failed to decode
+err stack: BadRequestError: failed to decode
+    at Object.throw (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa/lib/context.js:97:11)
+    at send (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa-send/index.js:76:36)
+    at serve (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa-static/index.js:44:24)
+    at dispatch (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa-compose/index.js:42:32)
+    at /Users/qiaojianfeng/qjf/more/bit2/node_modules/koa2-history-api-fallback/lib/index.js:102:11
+    at dispatch (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa-compose/index.js:42:32)
+    at allowedMethods (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa-router/lib/router.js:433:12)
+    at dispatch (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa-router/lib/router.js:353:32)
+    at dispatch (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa-compose/index.js:42:32)
+    at /Users/qiaojianfeng/qjf/more/bit2/server/middleware/resformat.js:33:13
+    at dispatch (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa-compose/index.js:42:32)
+    at /Users/qiaojianfeng/qjf/more/bit2/node_modules/koa-unless/index.js:26:14
+    at dispatch (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa-compose/index.js:42:32)
+    at bodyParser (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa-bodyparser/index.js:95:11)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+

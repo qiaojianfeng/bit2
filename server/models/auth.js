@@ -12,8 +12,8 @@ const schema = new Schema({
   modifyTime: { type: Date }, // 修改时间
   lastLoginT: Date, // 上次登陆时间
   loginIp: String, // 登陆IP
-  ban: { type: String, default: 'N' }, // 用户是否封禁
-  role: { type: Number, default: 1 } // 0:管理员 1:普通
+  isBan: { type: String, default: 'N' }, // 用户是否封禁
+  role: { type: Number, default: 1 } // 0:管理员 1:普通,
 })
 
 const Auth = mongoose.model('auth', schema, 'auth')

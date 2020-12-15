@@ -1,9 +1,9 @@
 const Koa = require('koa')
-// const path = require('path')
+const path = require('path')
 const consola = require('consola')
 const koaJwt = require('koa-jwt')
 const bodyParser = require('koa-bodyparser')
-// const static = require('koa-static')
+const static = require('koa-static')
 // const historyFallback = require('koa2-history-api-fallback')
 const { secret, host, port } = require('./config/base')
 const { init: loggerInit } = require('./utils/logger')
@@ -19,7 +19,13 @@ const jwtUnless = [/^\/api\/auth\/login/, /^\/api\/auth\/logout/, /^((?!\/api\/)
 app.use(appCatch)
 app.use(
   cors({
-    origin: ctx => '*',
+    origin: function(ctx) {
+      // if (ctx.url.indexOf('/api/') > -1) {
+      //   return '*'
+      // }
+      // return 'http://172.16.10.174:8081'
+      return '*'
+    },
     exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
     maxAge: 5,
     credentials: true,
@@ -50,7 +56,7 @@ app.use(api.allowedMethods())
 // app.use(router.allowedMethods())
 
 // app.use(historyFallback())
-// app.use(static(path.resolve('dist')))
+app.use(static(path.resolve('public')))
 
 loggerInit()
 // error-handling

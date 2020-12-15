@@ -2,7 +2,7 @@
  * @Author: qiaojianfeng
  * @Date: 2020-12-02 19:41:25
  * @Last Modified by: qiaojianfeng
- * @Last Modified time: 2020-12-14 15:47:49
+ * @Last Modified time: 2020-12-15 16:57:45
  */
 const { NOT_AUTH, NOT_FOUND } = require('../config/code')
 const { logError } = require('../utils/logger')
@@ -21,7 +21,7 @@ const appCatch = async (ctx, next) => {
       if (err.status === NOT_AUTH.code) {
         ctx.body = { msg: NOT_AUTH.msg, code: NOT_AUTH.code }
       } else if (err.status === NOT_FOUND.code) {
-        ctx.body = { code: NOT_FOUND.code, msg: NOT_FOUND.msg }
+        ctx.body = { msg: NOT_FOUND.msg, code: NOT_FOUND.code }
       } else {
         throw err
       }
