@@ -2,7 +2,7 @@ const photoDB = require('../models/photo')
 const upload = require('../middleware/upload')
 
 module.exports = {
-  add: async (ctx, next) => {
+  uploadPhoto: async (ctx, next) => {
     try {
       await upload
         .array('files', 9)(ctx, next)
@@ -17,6 +17,23 @@ module.exports = {
     try {
       const params = { ...ctx.request.body }
       const result = await photoDB.Dao.list(params)
+      ctx.body = result
+    } catch (err) {
+      throw err
+    }
+  },
+  getDiscoverPhoto: async ctx => {
+    try {
+      const params = { ...ctx.request.body }
+      const result = await photoDB.Dao.list(params)
+      ctx.body = result
+    } catch (err) {
+      throw err
+    }
+  },
+  getPhoto: async ctx => {
+    try {
+      const result = await photoDB.Dao.get(ctx.query.id)
       ctx.body = result
     } catch (err) {
       throw err

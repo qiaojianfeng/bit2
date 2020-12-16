@@ -6,6 +6,7 @@ const schema = new Schema({
   modifyTime: { type: Date }, // 创建时间
   like: { type: Array, default: [] }, // 喜欢
   url: String, // 图片地址
+  filename: String,
   group: { type: String, default: '未命名' }, // 组
   title: String, // 标题
   discription: String, // 描述
@@ -25,6 +26,7 @@ module.exports = {
           return {
             uid: params.uid,
             url: '/uploads/' + v.filename,
+            filename: v.filename,
             title: v.filename,
             size: v.size,
             mimetype: v.mimetype,
@@ -33,6 +35,14 @@ module.exports = {
         })
         const photo = await Photo.create(arr)
         return photo
+      } catch (error) {
+        throw error
+      }
+    },
+    get: async _id => {
+      try {
+        const result = await Photo.findOne({ _id })
+        return result
       } catch (error) {
         throw error
       }

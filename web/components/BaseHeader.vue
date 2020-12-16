@@ -6,6 +6,9 @@
                    to="/">首页</router-link>
       <router-link class="nav"
                    active-class="active"
+                   to="/discover">发现</router-link>
+      <router-link class="nav"
+                   active-class="active"
                    to="/login"
                    v-if="!user">登陆</router-link>
       <router-link class="nav"

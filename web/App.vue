@@ -50,11 +50,31 @@ a {
 a:hover {
   text-decoration: underline;
 }
+@font-face {
+  font-family: 'iconfont'; /* project id 2274527 */
+  src: url('//at.alicdn.com/t/font_2274527_0j7dtr0k35aq.eot');
+  src: url('//at.alicdn.com/t/font_2274527_0j7dtr0k35aq.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_2274527_0j7dtr0k35aq.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_2274527_0j7dtr0k35aq.woff') format('woff'),
+    url('//at.alicdn.com/t/font_2274527_0j7dtr0k35aq.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_2274527_0j7dtr0k35aq.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  width: 100%;
+  height: 100%;
   min-height: 100%;
   position: relative;
 }

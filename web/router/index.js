@@ -21,6 +21,19 @@ const routes = [
     component: () => import('../views/My.vue')
   },
   {
+    path: '/discover',
+    name: 'Discover',
+    meta: { title: '发现' },
+    component: () => import('../views/Discover.vue')
+  },
+  {
+    path: '/photo/:id',
+    name: 'Photo',
+    props: true,
+    meta: { title: '图片详情' },
+    component: () => import('../views/Photo.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     meta: { title: '关于' },

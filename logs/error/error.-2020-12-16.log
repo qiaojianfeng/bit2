@@ -1,0 +1,68 @@
+[2020-12-16T11:56:50.688] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/photo/?id=%7B%22_rawValue%22:%225fd89c802c5af970d9cee5dc%22,%22_shallow%22:false,%22__v_isRef%22:true,%22_value%22:%225fd89c802c5af970d9cee5dc%22%7D
+request client ip:  127.0.0.1
+request query:  {"id":"{\"_rawValue\":\"5fd89c802c5af970d9cee5dc\",\"_shallow\":false,\"__v_isRef\":true,\"_value\":\"5fd89c802c5af970d9cee5dc\"}"}
+response time: 1
+err name: AssertionError
+err message: status code must be a number
+err stack: AssertionError [ERR_ASSERTION]: status code must be a number
+    at Object.set status [as status] (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa/lib/response.js:86:5)
+    at Object.status (/Users/qiaojianfeng/qjf/more/bit2/node_modules/delegates/index.js:92:31)
+    at /Users/qiaojianfeng/qjf/more/bit2/server/middleware/catch.js:20:18
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async appCatch (/Users/qiaojianfeng/qjf/more/bit2/server/middleware/catch.js:19:5)
+*************** error log end ***************
+
+[2020-12-16T11:56:52.278] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/photo/?id=%7B%22_rawValue%22:%225fd89c802c5af970d9cee5dc%22,%22_shallow%22:false,%22__v_isRef%22:true,%22_value%22:%225fd89c802c5af970d9cee5dc%22%7D
+request client ip:  127.0.0.1
+request query:  {"id":"{\"_rawValue\":\"5fd89c802c5af970d9cee5dc\",\"_shallow\":false,\"__v_isRef\":true,\"_value\":\"5fd89c802c5af970d9cee5dc\"}"}
+response time: 1
+err name: AssertionError
+err message: status code must be a number
+err stack: AssertionError [ERR_ASSERTION]: status code must be a number
+    at Object.set status [as status] (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa/lib/response.js:86:5)
+    at Object.status (/Users/qiaojianfeng/qjf/more/bit2/node_modules/delegates/index.js:92:31)
+    at /Users/qiaojianfeng/qjf/more/bit2/server/middleware/catch.js:20:18
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async appCatch (/Users/qiaojianfeng/qjf/more/bit2/server/middleware/catch.js:19:5)
+*************** error log end ***************
+
+[2020-12-16T12:00:07.455] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/photo/?id=%7B%22_rawValue%22:%225fd89c802c5af970d9cee5dc%22,%22_shallow%22:false,%22__v_isRef%22:true,%22_value%22:%225fd89c802c5af970d9cee5dc%22%7D
+request client ip:  127.0.0.1
+request query:  {"id":"{\"_rawValue\":\"5fd89c802c5af970d9cee5dc\",\"_shallow\":false,\"__v_isRef\":true,\"_value\":\"5fd89c802c5af970d9cee5dc\"}"}
+response time: 0
+err name: AssertionError
+err message: status code must be a number
+err stack: AssertionError [ERR_ASSERTION]: status code must be a number
+    at Object.set status [as status] (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa/lib/response.js:86:5)
+    at Object.status (/Users/qiaojianfeng/qjf/more/bit2/node_modules/delegates/index.js:92:31)
+    at /Users/qiaojianfeng/qjf/more/bit2/server/middleware/catch.js:20:18
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async appCatch (/Users/qiaojianfeng/qjf/more/bit2/server/middleware/catch.js:19:5)
+*************** error log end ***************
+
+[2020-12-16T12:00:21.384] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/photo/?id=%7B%22_rawValue%22:%225fd89c802c5af970d9cee5dc%22,%22_shallow%22:false,%22__v_isRef%22:true,%22_value%22:%225fd89c802c5af970d9cee5dc%22%7D
+request client ip:  127.0.0.1
+request query:  {"id":"{\"_rawValue\":\"5fd89c802c5af970d9cee5dc\",\"_shallow\":false,\"__v_isRef\":true,\"_value\":\"5fd89c802c5af970d9cee5dc\"}"}
+response time: 0
+err name: AssertionError
+err message: status code must be a number
+err stack: AssertionError [ERR_ASSERTION]: status code must be a number
+    at Object.set status [as status] (/Users/qiaojianfeng/qjf/more/bit2/node_modules/koa/lib/response.js:86:5)
+    at Object.status (/Users/qiaojianfeng/qjf/more/bit2/node_modules/delegates/index.js:92:31)
+    at /Users/qiaojianfeng/qjf/more/bit2/server/middleware/catch.js:20:18
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async appCatch (/Users/qiaojianfeng/qjf/more/bit2/server/middleware/catch.js:19:5)
+*************** error log end ***************
+

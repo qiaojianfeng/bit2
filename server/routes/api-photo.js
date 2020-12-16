@@ -2,16 +2,17 @@
  * @Author: qiaojianfeng
  * @Date: 2020-12-04 15:05:44
  * @Last Modified by: qiaojianfeng
- * @Last Modified time: 2020-12-15 19:09:01
+ * @Last Modified time: 2020-12-16 17:36:05
  */
 const router = require('koa-router')()
 const getUid = require('../middleware/getUid')
-const { add, getMyPhoto } = require('../controller/photo')
+const { uploadPhoto, getPhoto, getDiscoverPhoto, getMyPhoto } = require('../controller/photo')
 
-router.post('/', getUid(), add)
-router.delete('/', add)
+router.post('/', getUid(), uploadPhoto)
+router.get('/', getPhoto)
+router.delete('/', getPhoto)
 
 router.get('/myPhoto', getMyPhoto)
-router.get('/discover', add)
+router.get('/discover', getDiscoverPhoto)
 
 module.exports = router

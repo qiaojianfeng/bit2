@@ -26,7 +26,7 @@ const getMethodGet = function(inst) {
   return async function(url, data, config) {
     // data = { params: { ...data, t: +new Date() } }
     try {
-      const res = await inst.get(url, data, config)
+      const res = await inst.get(url, { params: data }, config)
       return res.data
     } catch (error) {}
   }

@@ -3,6 +3,9 @@
     基于 <a href="https://webweifeng.github.io/fast-cms/"
        target="_blank">FAST-CMS</a> 开发
     <p>&copy; 2020-2021</p>
+    <p>
+      <router-link to="/about">关于我们</router-link>
+    </p>
   </footer>
 </template>
 

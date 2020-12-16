@@ -18,7 +18,17 @@ export const uploadApi = async files => {
   const res = await instance.post('/', fd, extra)
   return res.data
 }
-
+/**
+ * 获取当前用户的所有图片
+ */
 export const getMyPhotoApi = async () => {
   return photoServer.get('/myPhoto')
+}
+
+/**
+ * 获取图片详情
+ * @param {*图片ID} id
+ */
+export const getPhotoApi = async id => {
+  return photoServer.get('/', { id })
 }
