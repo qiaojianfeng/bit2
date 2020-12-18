@@ -50,6 +50,11 @@ a {
 a:hover {
   text-decoration: underline;
 }
+button {
+  outline: none;
+  border: none;
+  appearance: none;
+}
 @font-face {
   font-family: 'iconfont'; /* project id 2274527 */
   src: url('//at.alicdn.com/t/font_2274527_0j7dtr0k35aq.eot');

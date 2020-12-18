@@ -5,7 +5,7 @@ const fs = require('fs')
 // 上传文件存放路径、及文件命名
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    const filePath = path.join(__dirname, '../../public/uploads')
+    const filePath = path.join(__dirname, '../../uploads')
     if (!fs.existsSync(filePath)) fs.mkdirSync(filePath)
     cb(null, filePath)
   },

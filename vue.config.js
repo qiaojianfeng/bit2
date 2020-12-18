@@ -13,5 +13,13 @@ module.exports = {
   },
   chainWebpack: config => {
     config.resolve.alias.set('@', resolve('web'))
+  },
+  devServer: {
+    proxy: {
+      '/uploads': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true
+      }
+    }
   }
 }

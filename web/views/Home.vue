@@ -7,14 +7,16 @@
     <br />
     <br />
     <upload />
+    <pics-wall />
   </div>
 </template>
 
 <script>
 import Upload from '@/components/Upload.vue'
+import PicsWall from '@/components/PicsWall.vue'
 export default {
   name: 'Home',
-  components: { Upload },
+  components: { Upload, PicsWall },
   setup() {}
 }
 </script>
@@ -27,5 +29,8 @@ export default {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  color: #fff;
+  /* -webkit-text-fill-color: #fff;
+  -webkit-text-stroke: 1.2px #292e39; */
 }
 </style>

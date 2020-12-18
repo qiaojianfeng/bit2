@@ -1,10 +1,7 @@
 const Koa = require('koa')
-const path = require('path')
 const consola = require('consola')
 const koaJwt = require('koa-jwt')
 const bodyParser = require('koa-bodyparser')
-const static = require('koa-static')
-// const historyFallback = require('koa2-history-api-fallback')
 const { secret, host, port } = require('./config/base')
 const { init: loggerInit } = require('./utils/logger')
 const { resFormat } = require('./middleware/resformat')
@@ -15,7 +12,7 @@ const cors = require('koa2-cors')
 // const mime = require('mime-types')
 const app = new Koa()
 const DB = require('./config/db')
-const jwtUnless = [/^\/api\/auth\/login/, /^\/api\/auth\/logout/, /^((?!\/api\/).)*$/]
+const jwtUnless = [/^\/api\/auth\/login/, /^\/api\/auth\/logout/, /^\/api\/photo\/discover/, /^\/api\/photo\/detail/, /^((?!\/api\/).)*$/]
 app.use(appCatch)
 app.use(
   cors({
@@ -48,15 +45,12 @@ DB.connect()
 app.use(resFormat('^/api/'))
 app.use(api.routes())
 app.use(api.allowedMethods())
-
 /**
- * 注册路由
+ * 开发环境设置静态地址，生产环境使用nginx配置,参考:nginx.conf
  */
-// app.use(router.routes())
-// app.use(router.allowedMethods())
-
-// app.use(historyFallback())
-app.use(static(path.resolve('public')))
+if (process.env.NODE_ENV === 'development') {
+  app.use(require('koa-static')(require('path').join(__dirname, '../')))
+}
 
 loggerInit()
 // error-handling

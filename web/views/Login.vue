@@ -75,13 +75,23 @@ export default {
     }
     .btn {
       width: 100%;
-      line-height: 30px;
-      background-color: rgb(50, 56, 70);
       color: rgb(199, 204, 216);
       outline: none;
       border: none;
       appearance: none;
+      line-height: 40px;
+      background-color: #cc0033;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: 500;
+      box-shadow: 0px 15px 10px -12px #000;
       cursor: pointer;
+      /* &[disabled] {
+      } */
+      &:hover,
+      &:active {
+        opacity: 0.8;
+      }
     }
   }
 }

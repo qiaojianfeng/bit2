@@ -30,5 +30,5 @@ export const getMyPhotoApi = async () => {
  * @param {*图片ID} id
  */
 export const getPhotoApi = async id => {
-  return photoServer.get('/', { id })
+  return photoServer.get('/detail', { id })
 }

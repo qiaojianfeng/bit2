@@ -1,19 +1,28 @@
 <template>
   <div class="upload-block">
-    <label class="upload-btn"
-           for="input-file">发布</label>
-    <input class="input-file"
-           id="input-file"
-           type="file"
-           accept="image/*, .jpg,.png,.gif,.jpeg"
-           multiple
-           @change="onChange">
+    <template v-if="user">
+      <label class="upload-btn"
+             for="input-file">发布</label>
+      <input class="input-file"
+             id="input-file"
+             type="file"
+             accept="image/*, .jpg,.png,.gif,.jpeg"
+             multiple
+             @change="onChange">
+    </template>
+    <button v-else
+            class="upload-btn"
+            @click="handleClick">发布</button>
   </div>
 </template>
 <script>
 import { uploadApi } from '@/api/photo.js'
+import { inject } from 'vue'
+import { useRouter } from 'vue-router'
 export default {
   setup() {
+    const user = inject('user')
+    const router = useRouter()
     function onChange(event) {
       const { target } = event
       upload(target.files)
@@ -26,7 +35,10 @@ export default {
         console.log(error)
       }
     }
-    return { onChange }
+    function handleClick() {
+      router.push('login')
+    }
+    return { onChange, handleClick, user }
   }
 }
 </script>
@@ -41,6 +53,7 @@ export default {
     font-weight: 500;
     box-shadow: 0px 15px 10px -12px #000;
     cursor: pointer;
+    color: #fff;
     &:hover,
     &:active {
       opacity: 0.8;

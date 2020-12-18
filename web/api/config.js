@@ -7,8 +7,10 @@ const APIS = {
     photoBase: '//127.0.0.1:3000/api/photo'
   },
   production: {
-    authBase: '//bit2.cool/api/auth',
-    photoBase: '//127.0.0.1:3000/api/photo'
+    // authBase: '//bit2.cool/api/auth',
+    // photoBase: '///bit2.cool/api/photo'
+    authBase: '//152.136.253.151:999/api/auth',
+    photoBase: '//152.136.253.151:999/api/photo'
   }
 }
 
