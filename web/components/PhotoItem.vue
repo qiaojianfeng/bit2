@@ -34,13 +34,22 @@ export default {
 </script>
 <style lang="scss" scoped>
 .photo-item {
-  display: inline-block;
   width: 100%;
+  overflow: hidden;
   cursor: pointer;
+  box-sizing: border-box;
   img {
+    display: block;
     width: 100%;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     object-fit: cover;
+    box-sizing: border-box;
+    transition: all 300ms;
+    border: 0;
+    margin: 0;
+    /* &:hover {
+      transform: scale(1.05);
+    } */
   }
 }
 </style>

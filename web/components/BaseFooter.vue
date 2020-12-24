@@ -1,8 +1,7 @@
 <template>
   <footer class="footer">
     基于 <a href="https://webweifeng.github.io/fast-cms/"
-       target="_blank">FAST-CMS</a> 开发
-    <p>&copy; 2020-2021</p>
+       target="_blank">FAST-CMS</a> 开发 &copy; 2020-2021
     <p>
       <router-link to="/about">关于我们</router-link>
     </p>

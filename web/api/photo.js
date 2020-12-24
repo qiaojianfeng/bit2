@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { getServer, instance } from './base'
 
 import { BASE_URL, HEADERS } from './config'
@@ -29,6 +30,29 @@ export const getMyPhotoApi = async () => {
  * 获取图片详情
  * @param {*图片ID} id
  */
-export const getPhotoApi = async id => {
-  return photoServer.get('/detail', { id })
+export const getPhotoApi = async _id => {
+  return photoServer.get('/detail', { _id })
+}
+
+/**
+ * 获取当前用户的所有点赞图片
+ */
+export const getMyLikeApi = async () => {
+  return photoServer.get('/like')
+}
+
+/**
+ * 获取当前用户的所有点赞图片
+ * @param {*图片ID} id
+ */
+export const addLikeApi = async photoId => {
+  return photoServer.post('/like', { _id: photoId })
+}
+
+/**
+ * 获取当前用户的所有点赞图片
+ * @param {*图片ID} id
+ */
+export const delLikeApi = async photoId => {
+  return photoServer.put('/like', { _id: photoId })
 }

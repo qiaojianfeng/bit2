@@ -20,21 +20,25 @@
 </template>
 <script>
 import { reactive } from 'vue'
+import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import { loginApi } from '@/api/user'
 import { setCookie } from '@/utils/cookie'
 
 export default {
   setup() {
+    const store = useStore()
     const router = useRouter()
     const form = reactive({
       username: '',
       password: ''
     })
+
     async function handleLogin() {
       try {
         const res = await loginApi(form)
         if (res.code === 0) {
+          store.dispatch('getProfile')
           setCookie('token', res.data.token)
           router.push('/')
         } else {

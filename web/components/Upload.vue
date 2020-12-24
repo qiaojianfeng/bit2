@@ -30,7 +30,11 @@ export default {
     async function upload(files) {
       try {
         const res = await uploadApi(files)
-        console.log(res)
+        if (res.code === 0) {
+          alert('上传成功!')
+        } else {
+          alert(res.msg)
+        }
       } catch (error) {
         console.log(error)
       }

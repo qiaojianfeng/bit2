@@ -4,7 +4,7 @@ const { USER_NOT_FOUND, USER_PWD_ERROR, USER_USERNAME_WARN, USER_PWD_WARN, USER_
 const Schema = mongoose.Schema
 const schema = new Schema({
   username: { type: String, required: true }, // 用户名
-  nickname: String, // 昵称
+  nickname: { type: String, default: '匿名' }, // 昵称
   password: String, // 密码
   avatar: String, // 头像
   salt: String, // 盐
@@ -13,7 +13,8 @@ const schema = new Schema({
   lastLoginT: Date, // 上次登陆时间
   loginIp: String, // 登陆IP
   isBan: { type: String, default: 'N' }, // 用户是否封禁
-  role: { type: Number, default: 1 } // 0:管理员 1:普通,
+  role: { type: Number, default: 1 }, // 0:管理员 1:普通,
+  intro: { type: String, default: '这个人太懒了，什么也没留下～～' } // 介绍信息
 })
 
 const Auth = mongoose.model('auth', schema, 'auth')
@@ -46,7 +47,7 @@ module.exports = {
     },
     getUser: async userId => {
       try {
-        const user = await Auth.findOne({ _id: userId }, { _id: 1, username: 1, avatar: 1, role: 1 })
+        const user = await Auth.findOne({ _id: userId }, ['username', 'avatar', 'nickname', 'role', 'intro', 'isBan'])
         return user
       } catch (err) {
         throw err

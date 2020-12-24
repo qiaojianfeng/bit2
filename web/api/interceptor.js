@@ -8,12 +8,13 @@ export const requestInterceptorError = function(error) {
 }
 
 export const responseInterceptor = function(response) {
+  const { origin, href } = window.location
   const data = response.data || { code: undefined }
   const code = data.code
-  const origin = window.location.origin
-  const pageURL = window.location.href
-  if (code && code == 401) {
-    window.location.href = origin + '/login' + '?redirect=' + encodeURIComponent(pageURL)
+  const apiUrl = response.config.url
+  const ignoreApis = ['/user', '/discover']
+  if (code && code == 401 && !ignoreApis.includes(apiUrl)) {
+    window.location.href = origin + '/login' + '?redirect=' + encodeURIComponent(href)
     throw new Error(data.msg)
   }
   return response

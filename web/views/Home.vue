@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Bit2 - 全球领先的个人版权开放图库</h1>
+    <h1>BIT2.COOL - 全球领先的个人版权开放图库</h1>
     <br />
     <p>累计浏览 <em>2,341,434</em> 次</p>
     <br />
@@ -32,5 +32,8 @@ export default {
   color: #fff;
   /* -webkit-text-fill-color: #fff;
   -webkit-text-stroke: 1.2px #292e39; */
+  h1 {
+    font-size: 40px;
+  }
 }
 </style>

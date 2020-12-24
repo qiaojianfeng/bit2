@@ -21,8 +21,8 @@ export default {
     )
     const store = useStore()
     const user = computed(() => store.state.userinfo)
-    provide('user', user)
     store.dispatch('getProfile')
+    provide('user', user)
   }
 }
 </script>
@@ -51,6 +51,11 @@ a:hover {
   text-decoration: underline;
 }
 button {
+  outline: none;
+  border: none;
+  appearance: none;
+}
+input {
   outline: none;
   border: none;
   appearance: none;
