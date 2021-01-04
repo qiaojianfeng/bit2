@@ -1,6 +1,7 @@
 <template>
   <div class="photo-item"
-       @click="handleClick">
+       @click="handleClick"
+       :style="{backgroundColor}">
     <img :src="photo.url||defaultPic"
          :alt="photo.filename"
          :style="{ width:'100%',height:height||'auto'}"
@@ -21,14 +22,22 @@ export default {
   setup(props) {
     const router = useRouter()
     const defaultPic = 'http://photo.tuchong.com/16650954/f/457690686.jpg'
-
+    let backgroundColor = ''
     function onError(event) {
       event.target.src = defaultPic
     }
     function handleClick() {
       router.push({ name: 'Photo', params: { id: props.photo._id } })
     }
-    return { onError, handleClick, defaultPic }
+    function getRandom() {
+      return Math.ceil(Math.random() * 255)
+    }
+    function getdefalutBgColor() {
+      const [R, G, B] = [getRandom(), getRandom(), getRandom()]
+      backgroundColor = `rgb(${R},${G},${B})`
+    }
+    getdefalutBgColor()
+    return { onError, handleClick, defaultPic, backgroundColor }
   }
 }
 </script>

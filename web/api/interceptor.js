@@ -8,7 +8,6 @@ export const requestInterceptorError = function(error) {
 }
 
 export const responseInterceptor = function(response) {
-  const { origin, href } = window.location
   const data = response.data || { code: undefined }
   const code = data.code
   const apiUrl = response.config.url

@@ -23,10 +23,19 @@ module.exports = {
   Dao: {
     login: async params => {
       try {
-        const user = await Auth.findOne({ username: params.username })
+        const user = await Auth.findOne({ username: params.username }, [
+          'username',
+          'avatar',
+          'nickname',
+          'role',
+          'intro',
+          'isBan',
+          'password',
+          'salt'
+        ])
         if (!user) throw USER_NOT_FOUND
         if (user.password !== encryptPassword(user.salt, params.password)) throw USER_PWD_ERROR
-        return { token: createToken({ id: user.id }) }
+        return { token: createToken({ id: user.id }), ...user._doc }
       } catch (err) {
         throw err
       }

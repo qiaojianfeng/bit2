@@ -12,8 +12,8 @@
           <div class="footer">
             <div class="l">
               <i class="avatar"
-                 :style="{backgroundImage:`url(${v.author.avatar||defaultAvatar})`}"></i>
-              <span class="nickname">{{v.author.nickname}}</span>
+                 :style="{backgroundImage:`url(${v.author && (v.author.avatar||defaultAvatar)})`}"></i>
+              <span class="nickname">{{v.author &&v.author.nickname}}</span>
             </div>
             <div class="r">
               <like :like="v.like"

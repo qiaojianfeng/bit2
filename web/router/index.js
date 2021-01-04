@@ -1,6 +1,9 @@
 // @ts-nocheck
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Login from '../views/Login.vue'
+import My from '../views/My.vue'
+import Discover from '../views/Discover.vue'
 
 const routes = [
   {
@@ -13,13 +16,13 @@ const routes = [
     path: '/login',
     name: 'Login',
     meta: { title: '登陆' },
-    component: () => import('../views/Login.vue')
+    component: Login
   },
   {
     path: '/my',
     name: 'My',
     meta: { title: '个人中心' },
-    component: () => import('../views/My.vue'),
+    component: My,
     redirect: '/my/photo',
     children: [
       {
@@ -43,7 +46,7 @@ const routes = [
     path: '/discover',
     name: 'Discover',
     meta: { title: '发现' },
-    component: () => import('../views/Discover.vue')
+    component: Discover
   },
   {
     path: '/photo/:id',

@@ -2,7 +2,7 @@
 node_modules
 /dist
 /logs
-
+/uploads
 
 # local env files
 .env.local

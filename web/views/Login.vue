@@ -1,6 +1,5 @@
 <template>
   <div class="login">
-    <!-- <h1>登陆</h1> -->
     <div class="login-box">
       <div><input class="input"
                type="text"
@@ -38,9 +37,9 @@ export default {
       try {
         const res = await loginApi(form)
         if (res.code === 0) {
-          store.dispatch('getProfile')
+          store.commit('SET_USERINFO', res.data)
           setCookie('token', res.data.token)
-          router.push('/')
+          router.push('/my/photo')
         } else {
           alert(res.msg)
         }
@@ -54,7 +53,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 .login {
-  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   .login-box {
     margin-top: 30px;
     width: 250px;

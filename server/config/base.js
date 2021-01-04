@@ -3,12 +3,23 @@ const BASE = {
   port: 3000,
   host: '0.0.0.0',
   mongoUrl: 'mongodb://localhost:27017/bit2',
-  secret: 'bit2@@xx#123'
+  secret: 'bit2@@xx#123',
+  upload: {
+    folder: 'uploads',
+    maxSize: '100MB',
+    filenamePrefix: 'BIT2-',
+    fileLength: 9,
+    fileTypes: ['JPEG', 'JPG', 'TIFF', 'PNG', 'GIF', 'SVG', 'PDF', 'BMP', 'WEBP']
+  },
+  logs: { folder: 'logs', maxSize: 10000 }
 }
 
-const development = Object.assign({}, BASE, {})
+const development = Object.assign({}, BASE, {
+  domain: 'http://localhost'
+})
 const production = Object.assign({}, BASE, {
   // 该部分是生产环境配置
+  domain: 'http://bit2.cool:999',
   port: 8081,
   mongoUrl: 'mongodb://bit2_admin:51741@127.0.0.1:27017/bit2'
 })

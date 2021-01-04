@@ -8,17 +8,21 @@
 </template>
 <script>
 import { addLikeApi, delLikeApi } from '@/api/photo'
-import { computed, inject, ref } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
+import { useStore } from 'vuex'
 export default {
   props: {
     like: { type: Array, default: () => [] },
     photoId: { type: String }
   },
   setup(props) {
-    const user = inject('user')
+    const store = useStore()
     const photoLike = ref(props.like)
-    const isLike = computed(function () {
-      return photoLike.value.includes(user.value._id)
+    let isLike = ref(false)
+
+    const user = computed(() => store.state.userinfo || {})
+    watchEffect(function () {
+      isLike.value = photoLike.value.includes(user.value._id)
     })
     async function addLike() {
       try {

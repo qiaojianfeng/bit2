@@ -26,7 +26,7 @@ const getMethodGet = function(inst) {
   return async function(url, data, config) {
     // data = { params: { ...data, t: +new Date() } }
     try {
-      const res = await inst.get(url, { params: data }, config)
+      const res = await inst().get(url, { params: data }, config)
       return res.data
     } catch (error) {}
   }
@@ -40,7 +40,7 @@ const getMethodPost = function(inst) {
   return async function(url, data, config) {
     data = requestTransform(data) // 添加request格式化方法
     try {
-      const res = await inst.post(url, data, config)
+      const res = await inst().post(url, data, config)
       return res.data
     } catch (error) {}
   }
@@ -49,7 +49,7 @@ const getMethodPut = function(inst) {
   return async function(url, data, config) {
     data = requestTransform(data) // 添加request格式化方法
     try {
-      const res = await inst.put(url, data, config)
+      const res = await inst().put(url, data, config)
       return res.data
     } catch (error) {}
   }
@@ -58,7 +58,7 @@ const getMethodDelete = function(inst) {
   return async function(url, data, config) {
     data = requestTransform(data) // 添加request格式化方法
     try {
-      const res = await inst.delete(url, data, config)
+      const res = await inst().delete(url, data, config)
       return res.data
     } catch (error) {}
   }
@@ -83,7 +83,7 @@ const getInstance = function(urlbase) {
  * @param {String} urlbase
  */
 export const getServer = function(urlbase) {
-  const instance = getInstance(urlbase) // 获取实例
+  const instance = () => getInstance(urlbase) // 获取实例
   const server = {
     get: getMethodGet(instance),
     post: getMethodPost(instance),

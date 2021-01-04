@@ -37,12 +37,14 @@
   </div>
 </template>
 <script>
-import { inject } from 'vue'
+import { useStore } from 'vuex'
+import { computed } from 'vue'
 import defaultAvatar from '@/assets/avatar.jpg'
 export default {
   components: {},
   setup() {
-    const user = inject('user')
+    const store = useStore()
+    const user = computed(() => store.state.userinfo)
     return { user, defaultAvatar }
   }
 }

@@ -19,10 +19,12 @@
   </header>
 </template>
 <script>
-import { inject } from 'vue'
+import { computed } from 'vue'
+import { useStore } from 'vuex'
 export default {
   setup() {
-    const user = inject('user')
+    const store = useStore()
+    const user = computed(() => store.state.userinfo)
     return { user }
   }
 }
